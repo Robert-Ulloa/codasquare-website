@@ -1,30 +1,32 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiCheckCircle } from 'react-icons/hi'
+import { HiCheckCircle, HiXCircle } from 'react-icons/hi'
 
-const idealCustomers = [
-  {
-    title: 'Independent Coffee Shops',
-    description: 'Single or multi-location cafes ready to go beyond a basic website and start taking orders online.',
-    traits: ['Using Square POS', '50+ daily transactions', 'Wants to grow online orders'],
-  },
-  {
-    title: 'Specialty Cafes & Roasters',
-    description: 'Shops offering subscriptions, specialty drinks, or unique experiences that white-label tools can\'t handle.',
-    traits: ['Custom menu needs', 'Subscription programs', 'Brand-conscious'],
-  },
-  {
-    title: 'Growing Multi-Location Brands',
-    description: 'Expanding businesses that need one platform across all stores with centralized reporting and management.',
-    traits: ['2–10 locations', 'Need centralized data', 'Ready to invest in growth'],
-  },
+const perfectFor = [
+  'Want to own their technology (not rent forever)',
+  'Have unique needs that templates can’t solve',
+  'Are ready to invest in long-term growth',
+  'Value their brand identity',
+  'Already use Square (or willing to switch)',
+  'Think 3–5 years ahead',
+]
+
+const notFor = [
+  'Need to launch tomorrow (custom takes 8–12 weeks)',
+  'Extremely tight budgets (starting at $3K)',
+  'Change their mind constantly mid-project',
+  'Just want the cheapest option available',
 ]
 
 export default function WhoThisIsForSection() {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      <div className="container-custom">
+    <section className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-12 left-[-8%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,36 +34,55 @@ export default function WhoThisIsForSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-neutral-900 mb-4">
-            Built For Shops That Are <span className="text-primary-600">Ready to Grow</span>
+          <h2 className="heading-lg text-neutral-50 mb-4">
+            Built For Shops That Are <span className="text-[#FCBF49]">Ready to Grow</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-            We work best with coffee shop owners who know their business deserves more than a cookie-cutter app.
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            We work best with independent business owners who know their brand deserves more than a cookie-cutter app.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {idealCustomers.map((customer, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card"
-            >
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">{customer.title}</h3>
-              <p className="text-neutral-600 leading-relaxed mb-6">{customer.description}</p>
-              <div className="space-y-3">
-                {customer.traits.map((trait) => (
-                  <div key={trait} className="flex items-center space-x-2">
-                    <HiCheckCircle className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                    <span className="text-sm text-neutral-700">{trait}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Perfect For */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white/5 border border-white/10 rounded-2xl shadow-lg p-8"
+          >
+            <h3 className="text-xl font-bold text-[#FCBF49] mb-6">Perfect For Independent Businesses That…</h3>
+            <div className="space-y-4">
+              {perfectFor.map((item) => (
+                <div key={item} className="flex items-start space-x-3">
+                  <HiCheckCircle className="w-5 h-5 text-[#FCBF49] flex-shrink-0 mt-0.5" />
+                  <span className="text-neutral-200">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Not Right For */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="bg-white/5 border border-white/10 rounded-2xl shadow-lg p-8"
+          >
+            <h3 className="text-xl font-bold text-neutral-400 mb-6">Probably Not the Right Fit If You…</h3>
+            <div className="space-y-4">
+              {notFor.map((item) => (
+                <div key={item} className="flex items-start space-x-3">
+                  <HiXCircle className="w-5 h-5 text-neutral-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-neutral-300">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-neutral-400 italic">
+              Being upfront saves us both time. If you&apos;re not sure, let&apos;s talk — the consultation is free.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>

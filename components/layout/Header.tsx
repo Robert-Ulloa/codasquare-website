@@ -26,15 +26,15 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-neutral-950/90 backdrop-blur-md shadow-lg shadow-black/10 py-4' : 'bg-transparent py-6'
       }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary-600">
-              Coda<span className="text-accent-500">Square</span>
+            <div className="text-2xl font-bold text-[#EAE2B7]">
+              Coda<span className="text-[#F77F00]">Square</span>
             </div>
           </Link>
 
@@ -44,7 +44,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-700 hover:text-primary-600 transition-colors font-medium"
+                className="text-neutral-200 hover:text-[#FCBF49] transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -59,7 +59,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-neutral-700 hover:text-primary-600"
+            className="md:hidden text-neutral-200 hover:text-[#FCBF49]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -73,13 +73,13 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 py-4 bg-neutral-950/95 backdrop-blur-md rounded-lg shadow-lg border border-white/10">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-neutral-700 hover:text-primary-600 transition-colors font-medium px-4"
+                  className="text-neutral-200 hover:text-[#FCBF49] transition-colors font-medium px-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

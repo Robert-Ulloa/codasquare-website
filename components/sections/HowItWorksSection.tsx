@@ -1,51 +1,63 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiChat, HiPencilAlt, HiCode, HiCog, HiCheckCircle, HiSupport } from 'react-icons/hi'
+import { HiChat, HiCode, HiCheckCircle, HiKey } from 'react-icons/hi'
 
 const steps = [
   {
-    week: 'Week 1',
+    week: 'Phase 1',
     icon: HiChat,
-    title: 'Discovery Call',
-    description: 'We learn about your shop, your workflow, and your goals. You tell us what matters — we listen.',
+    title: 'Discovery',
+    bullets: [
+      'Audit your current Square setup',
+      'Map your customer journey',
+      'Design mockups for your approval',
+      'Plan features together',
+    ],
   },
   {
-    week: 'Week 2',
-    icon: HiPencilAlt,
-    title: 'Design & Planning',
-    description: 'You get wireframes and a clear project plan. We nail down every feature before a single line of code is written.',
-  },
-  {
-    week: 'Weeks 3–8',
+    week: 'Phase 2',
     icon: HiCode,
-    title: 'Build & Iterate',
-    description: 'We build your app and website with weekly check-ins. You see progress in real time and give feedback along the way.',
+    title: 'Development',
+    bullets: [
+      'Build your app & website',
+      'Integrate with Square seamlessly',
+      'Test everything (QA automation expertise)',
+      'Weekly progress updates',
+    ],
   },
   {
-    week: 'Weeks 9–10',
-    icon: HiCog,
-    title: 'Square Integration & Testing',
-    description: 'We connect everything to your Square POS — menus, inventory, payments. Then test it until it\'s bulletproof.',
-  },
-  {
-    week: 'Weeks 11–12',
+    week: 'Phase 3',
     icon: HiCheckCircle,
-    title: 'Launch & Training',
-    description: 'Your app goes live. We train your team, set up analytics, and make sure everything runs smoothly from day one.',
+    title: 'Launch',
+    bullets: [
+      'Deploy to App Store & Google Play',
+      'Launch your website',
+      'Train your team (in-person or video)',
+      'Go live with full support',
+    ],
   },
   {
-    week: 'Ongoing',
-    icon: HiSupport,
-    title: 'Support & Growth',
-    description: 'We don\'t disappear after launch. Optional maintenance plans keep your software updated and your business growing.',
+    week: 'Phase 4',
+    icon: HiKey,
+    title: 'You Own It',
+    bullets: [
+      'Full source code delivered to you',
+      'Optional maintenance packages',
+      'Updates when YOU decide',
+      'Hire any developer for future changes',
+    ],
   },
 ]
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="how-it-works" className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-[-10%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,19 +65,19 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-neutral-900 mb-4">
-            From Idea to Launch in <span className="text-accent-500">8–12 Weeks</span>
+          <h2 className="heading-lg text-neutral-50 mb-4">
+            From Idea to Launch With <span className="text-[#FCBF49]">Clear Milestones</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-            A clear, collaborative process so you always know what&apos;s happening and when.
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            A clear, collaborative process with defined milestones — so you always know what&apos;s happening and what&apos;s next.
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary-200 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2" />
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -79,16 +91,26 @@ export default function HowItWorksSection() {
               >
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <span className="inline-block text-sm font-semibold text-accent-500 mb-2">
+                  <span className="inline-block text-sm font-semibold text-[#FCBF49] mb-2">
                     {step.week}
                   </span>
-                  <h3 className="text-xl font-bold text-neutral-900 mb-2">{step.title}</h3>
-                  <p className="text-neutral-600 leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-neutral-50 mb-3">{step.title}</h3>
+                  <ul className={`space-y-2 ${index % 2 === 0 ? 'md:ml-auto' : ''}`}>
+                    {step.bullets.map((bullet, i) => (
+                      <li key={i} className={`text-neutral-300 flex items-center gap-2 ${
+                        index % 2 === 0 ? 'md:justify-end' : ''
+                      }`}>
+                        {index % 2 !== 0 && <span className="w-1.5 h-1.5 bg-[#F77F00] rounded-full flex-shrink-0" />}
+                        <span>{bullet}</span>
+                        {index % 2 === 0 && <span className="w-1.5 h-1.5 bg-[#F77F00] rounded-full flex-shrink-0" />}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 {/* Icon circle */}
-                <div className="relative z-10 flex-shrink-0 w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center shadow-lg">
-                  <step.icon className="w-7 h-7 text-white" />
+                <div className="relative z-10 flex-shrink-0 w-16 h-16 bg-[#003049] rounded-full flex items-center justify-center shadow-lg border border-white/10">
+                  <step.icon className="w-8 h-8 text-[#FCBF49]" />
                 </div>
 
                 {/* Spacer for the other side */}

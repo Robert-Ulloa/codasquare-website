@@ -1,103 +1,153 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const tiers = [
   {
-    name: 'Essential',
-    description: 'A focused launch kit to get your brand live and taking orders quickly.',
+    name: "Essential",
+    description:
+      "A focused launch kit to get your brand online and taking orders — typically live in 6 weeks.",
     features: [
-      'Custom online ordering site',
-      'Square menu sync',
-      'Branded domain setup',
-      'Mobile-first UX',
+      "Custom online ordering site",
+      "Square menu sync",
+      "Branded domain setup",
+      "Mobile-first UX",
     ],
-    bestFor: 'New concepts and first-time online ordering.',
+    bestFor: "New concepts and first-time online ordering.",
   },
   {
-    name: 'Professional',
-    description: 'A full experience with advanced features and stronger customer retention.',
+    name: "Professional",
+    description:
+      "A complete digital experience designed to increase repeat visits and average order value.",
     features: [
-      'Everything in Essential',
-      'Native iOS & Android apps',
-      'Loyalty and rewards',
-      'Customer analytics dashboard',
+      "Everything in Essential",
+      "Native iOS & Android apps",
+      "Loyalty and rewards",
+      "Customer analytics dashboard",
     ],
-    bestFor: 'Growing teams ready to increase repeat orders.',
+    bestFor: "Growing teams ready to increase repeat orders.",
     popular: true,
   },
   {
-    name: 'Enterprise',
-    description: 'A scalable platform with custom integrations and multi-location support.',
+    name: "Enterprise",
+    description:
+      "A scalable platform that unifies operations across every location.",
     features: [
-      'Everything in Professional',
-      'Multi-location management',
-      'Custom API integrations',
-      'Dedicated support & SLA',
+      "Everything in Professional",
+      "Multi-location management",
+      "Custom API integrations",
+      "Dedicated support & SLA",
     ],
-    bestFor: 'Multi-unit operators and complex workflows.',
+    bestFor: "Multi-unit operators and complex workflows.",
   },
-]
+];
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="section-padding bg-neutral-50">
-      <div className="container-custom">
+    <section
+      id="features"
+      className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden"
+    >
+      <div className="absolute inset-0">
+        <div className="absolute -top-32 right-[-10%] h-80 w-80 rounded-full bg-[#F77F00]/20 blur-3xl" />
+        <div className="absolute -bottom-24 left-[-12%] h-96 w-96 rounded-full bg-[#D62828]/20 blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FCBF49]/15 blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-neutral-900 mb-4">What You Get</h2>
-          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-            Clear tiers built to match your stage, each designed to feel premium without extra complexity.
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-sm uppercase tracking-[0.2em] text-[#FCBF49] mb-4"
+          >
+            Service Tiers
+          </motion.p>
+          <h2 className="heading-lg text-neutral-50 mb-4">What You Get</h2>
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            Clear tiers built to match your stage, each designed to feel premium
+            without extra complexity.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {tiers.map((tier, index) => (
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.12 } },
+          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+        >
+          {tiers.map((tier) => (
             <motion.div
               key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative rounded-2xl p-8 bg-white shadow-lg border border-transparent ${
-                tier.popular ? 'ring-2 ring-accent-500 md:scale-105' : 'hover:shadow-xl'
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+              whileHover={{ y: -6 }}
+              className={`relative rounded-2xl p-8 border backdrop-blur ${
+                tier.popular
+                  ? "bg-white/10 border-[#FCBF49]/50 shadow-[0_20px_60px_rgba(252,191,73,0.15)]"
+                  : "bg-white/5 border-white/10 hover:border-white/20"
               }`}
             >
+              <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-40">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#EAE2B7] to-transparent" />
+              </div>
+
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FCBF49] text-neutral-950 text-sm font-semibold px-4 py-1 rounded-full">
                   Most Popular
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-neutral-900 mb-2">
+                <h3 className="text-2xl font-bold text-neutral-50 mb-2">
                   {tier.name}
                 </h3>
-                <p className="text-neutral-600">{tier.description}</p>
+                <p className="text-neutral-300">{tier.description}</p>
               </div>
 
               <ul className="space-y-3 mb-6">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start space-x-3">
-                    <span className="mt-2 w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" />
-                    <span className="text-neutral-700 text-sm">{feature}</span>
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#F77F00] flex-shrink-0" />
+                    <span className="text-neutral-200 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="text-sm font-medium text-neutral-900">
-                <span className="text-neutral-500">Best for: </span>
+              <p className="text-sm font-medium text-neutral-100">
+                <span className="text-neutral-400">Best for: </span>
                 {tier.bestFor}
               </p>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#003049] via-[#D62828] to-[#FCBF49]"
+              />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

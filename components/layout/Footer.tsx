@@ -1,15 +1,15 @@
 import Link from 'next/link'
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedin, FaGlobe, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const footerSections = {
     solutions: [
-      { label: 'Mobile Apps', href: '#solutions' },
-      { label: 'Websites', href: '#solutions' },
-      { label: 'Square Integration', href: '#solutions' },
-      { label: 'Maintenance', href: '#pricing' },
+      { label: 'Mobile Apps', href: '#features' },
+      { label: 'Websites', href: '#features' },
+      { label: 'Square Optimization', href: '#features' },
+      { label: 'Consulting', href: '#features' },
     ],
     company: [
       { label: 'About', href: '#about' },
@@ -25,40 +25,40 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-neutral-900 text-neutral-300">
+    <footer className="bg-neutral-950 text-neutral-300">
       <div className="container-custom py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-1">
-            <div className="text-2xl font-bold text-white mb-4">
-              Coda<span className="text-accent-500">Square</span>
+            <div className="text-2xl font-bold text-[#EAE2B7] mb-4">
+              Coda<span className="text-[#F77F00]">Square</span>
             </div>
             <p className="text-sm mb-4">
-              Custom apps and websites built for independent coffee shops.
+              Custom apps and websites built for independent and new businesses.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/roberto-ulloa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-accent-500 transition-colors"
+                className="hover:text-[#FCBF49] transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://robertoulloa.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-accent-500 transition-colors"
-                aria-label="GitHub"
+                className="hover:text-[#FCBF49] transition-colors"
+                aria-label="Portfolio"
               >
-                <FaGithub className="w-5 h-5" />
+                <FaGlobe className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@codasquare.com"
-                className="hover:text-accent-500 transition-colors"
+                href="mailto:Roanuc8@gmail.com"
+                className="hover:text-[#FCBF49] transition-colors"
                 aria-label="Email"
               >
                 <FaEnvelope className="w-5 h-5" />
@@ -74,7 +74,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-accent-500 transition-colors"
+                    className="text-sm hover:text-[#FCBF49] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-accent-500 transition-colors"
+                    className="text-sm hover:text-[#FCBF49] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -108,7 +108,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-accent-500 transition-colors"
+                    className="text-sm hover:text-[#FCBF49] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -119,10 +119,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-800 pt-8">
+        <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-center md:text-left">
-              © {currentYear} Coda Square. Built with ❤️ for independent coffee shops.
+              © {currentYear} Coda Square. Built with care for independent and new businesses.
             </p>
             <p className="text-sm text-center md:text-right">
               Based in London • Serving the United States

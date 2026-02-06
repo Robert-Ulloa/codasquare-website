@@ -5,13 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Coda Square - Custom Apps & Websites for Coffee Shops',
-  description: 'Purpose-built ordering apps and websites for coffee shops and cafes. No templates. No subscriptions. Built with Square integration.',
-  keywords: ['coffee shop app', 'square integration', 'custom ordering app', 'cafe website', 'mobile ordering'],
+  title: 'Coda Square - Custom Apps & Websites for Independent Businesses',
+  description: 'Purpose-built ordering apps and websites for independent and new businesses. No templates. No subscriptions. Built with Square integration.',
+  keywords: ['custom ordering app', 'square integration', 'independent business website', 'mobile ordering', 'custom storefront'],
   authors: [{ name: 'Roberto - Coda Square' }],
   openGraph: {
-    title: 'Coda Square - Custom Apps & Websites for Coffee Shops',
-    description: 'Purpose-built ordering apps and websites for coffee shops and cafes.',
+    title: 'Coda Square - Custom Apps & Websites for Independent Businesses',
+    description: 'Purpose-built ordering apps and websites for independent and new businesses.',
     url: 'https://codasquare.com',
     siteName: 'Coda Square',
     locale: 'en_US',

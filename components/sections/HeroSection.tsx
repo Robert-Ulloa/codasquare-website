@@ -6,46 +6,70 @@ import { HiSparkles, HiCheckCircle } from 'react-icons/hi'
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      <div className="container-custom">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-neutral-950 text-neutral-100 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute -top-32 right-[-12%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
+        <div className="absolute top-1/3 left-[-10%] h-96 w-96 rounded-full bg-[#D62828]/15 blur-3xl" />
+        <div className="absolute bottom-[-20%] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#FCBF49]/20 blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <div className="inline-flex items-center space-x-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex items-center space-x-2 bg-white/10 text-[#FCBF49] px-4 py-2 rounded-full mb-6"
+            >
               <HiSparkles className="w-4 h-4" />
-              <span className="text-sm font-medium">No Templates • No Subscriptions</span>
-            </div>
+              <span className="text-sm font-medium">Custom Apps • Powered by Square</span>
+            </motion.div>
 
-            <h1 className="heading-xl text-neutral-900 mb-6">
-              Custom Apps & Websites That Turn Your{' '}
-              <span className="text-primary-600">Square POS</span> Into A{' '}
-              <span className="text-accent-500">Growth Engine</span>
+            <h1 className="heading-xl text-neutral-50 mb-6">
+              More Orders, Fewer Headaches —{' '}
+              <span className="text-[#FCBF49]">Custom Apps</span> Powered by{' '}
+              <span className="text-[#F77F00]">Square</span>
             </h1>
 
-            <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
-              Purpose-built ordering apps and websites for coffee shops and cafes. 
-              Just software that works as hard as you do.
+            <p className="text-xl text-neutral-300 mb-8 leading-relaxed">
+              Custom ordering apps and storefront websites for independent and new businesses.
+              One build. Your brand. Your rules.
             </p>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <div className="flex items-center space-x-2 text-neutral-600">
-                <HiCheckCircle className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-medium">Powered by Square</span>
-              </div>
-              <div className="flex items-center space-x-2 text-neutral-600">
-                <HiCheckCircle className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-medium">Built for Independent Businesses</span>
-              </div>
-              <div className="flex items-center space-x-2 text-neutral-600">
-                <HiCheckCircle className="w-5 h-5 text-primary-600" />
-                <span className="text-sm font-medium">You Own Everything</span>
-              </div>
-            </div>
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.08 } },
+              }}
+              className="flex flex-wrap gap-4 mb-8"
+            >
+              {[
+                'Custom apps powered by Square',
+                'Built for Independent Businesses',
+                'You Own Everything',
+              ].map((item) => (
+                <motion.div
+                  key={item}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                  }}
+                  className="flex items-center space-x-2 text-neutral-300"
+                >
+                  <HiCheckCircle className="w-5 h-5 text-[#FCBF49]" />
+                  <span className="text-sm font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -60,19 +84,19 @@ export default function HeroSection() {
 
           {/* Right Column - Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               {/* Placeholder for app/website mockup */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center">
+              <div className="aspect-[4/3] bg-gradient-to-br from-[#003049] via-[#D62828] to-[#F77F00] flex items-center justify-center">
                 <div className="text-center text-white p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/20 rounded-2xl backdrop-blur-sm flex items-center justify-center">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-white/15 rounded-2xl backdrop-blur-sm flex items-center justify-center">
                     <HiSparkles className="w-16 h-16" />
                   </div>
-                  <p className="text-lg font-semibold mb-2">App + Website Mockup</p>
+                  <p className="text-lg font-semibold">App + Website Mockup</p>
                   <p className="text-sm opacity-90">Replace with actual design screenshot</p>
                 </div>
               </div>
@@ -81,26 +105,26 @@ export default function HeroSection() {
             {/* Floating elements */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 hidden lg:block"
+              transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-6 -right-6 bg-neutral-950/90 border border-white/10 rounded-xl shadow-xl p-4 hidden lg:block"
             >
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm font-medium">Live Orders</span>
+                <div className="w-2 h-2 bg-[#FCBF49] rounded-full"></div>
+                <span className="text-sm font-medium text-neutral-200">Live Orders</span>
               </div>
-              <p className="text-2xl font-bold text-primary-600 mt-2">+25%</p>
+              <p className="text-2xl font-bold text-[#FCBF49] mt-2">+25%</p>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 hidden lg:block"
+              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="absolute -bottom-6 -left-6 bg-neutral-950/90 border border-white/10 rounded-xl shadow-xl p-4 hidden lg:block"
             >
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <span className="text-sm font-medium">Square Sync</span>
+                <div className="w-2 h-2 bg-[#F77F00] rounded-full"></div>
+                <span className="text-sm font-medium text-neutral-200">Square Sync</span>
               </div>
-              <p className="text-2xl font-bold text-accent-500 mt-2">Real-time</p>
+              <p className="text-2xl font-bold text-[#F77F00] mt-2">Real-time</p>
             </motion.div>
           </motion.div>
         </div>
