@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { HiCheckCircle, HiXCircle } from 'react-icons/hi'
+import Link from 'next/link'
 
 const perfectFor = [
   'Want to own their technology (not rent forever)',
@@ -21,7 +22,7 @@ const notFor = [
 
 export default function WhoThisIsForSection() {
   return (
-    <section className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-12 left-[-8%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>
@@ -80,7 +81,10 @@ export default function WhoThisIsForSection() {
               ))}
             </div>
             <p className="mt-6 text-sm text-neutral-400 italic">
-              Being upfront saves us both time. If you&apos;re not sure, let&apos;s talk — the consultation is free.
+              Being upfront saves us both time. If you&apos;re not sure, let&apos;s talk —{' '}
+              <Link href="#contact" className="text-[#FCBF49] hover:text-[#F77F00] underline underline-offset-2 transition-colors not-italic">
+                the consultation is free
+              </Link>.
             </p>
           </motion.div>
         </div>

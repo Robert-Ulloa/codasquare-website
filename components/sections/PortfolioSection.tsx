@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { HiDeviceMobile, HiShoppingCart, HiChartBar, HiClock, HiCollection, HiCog } from 'react-icons/hi'
 import Link from 'next/link'
+import { analytics } from '@/lib/analytics'
 
 const caseStudies = [
   {
@@ -45,7 +46,7 @@ const caseStudies = [
 
 export default function PortfolioSection() {
   return (
-    <section id="work" className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section id="work" className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 left-[8%] h-80 w-80 rounded-full bg-[#D62828]/15 blur-3xl" />
       </div>
@@ -129,7 +130,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mt-12"
         >
-          <Link href="#contact" className="btn-primary">
+          <Link href="#contact" onClick={() => analytics.ctaClick('Start Your Project', 'portfolio')} className="btn-primary">
             Start Your Project
           </Link>
         </motion.div>

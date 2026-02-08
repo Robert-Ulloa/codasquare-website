@@ -52,7 +52,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="how-it-works" className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-10 right-[-10%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>

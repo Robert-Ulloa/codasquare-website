@@ -12,7 +12,7 @@ const comparisons = [
 
 export default function WhyCustomSection() {
   return (
-    <section className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -bottom-24 right-[-8%] h-80 w-80 rounded-full bg-[#F77F00]/15 blur-3xl" />
       </div>
@@ -44,7 +44,7 @@ export default function WhyCustomSection() {
             {/* Header row */}
             <div className="grid grid-cols-3 bg-neutral-900 text-white">
               <div className="p-4 font-semibold"></div>
-              <div className="p-4 font-semibold text-center bg-[#003049]">Coda Square</div>
+              <div className="p-4 font-semibold text-center bg-[#003049]">CODA x Square</div>
               <div className="p-4 font-semibold text-center">White-Label Apps</div>
             </div>
 
@@ -88,7 +88,7 @@ export default function WhyCustomSection() {
               </div>
               <div className="text-3xl font-bold text-neutral-600">vs.</div>
               <div>
-                <p className="text-sm text-neutral-400 mb-1">Coda Square custom build</p>
+                <p className="text-sm text-neutral-400 mb-1">CODA x Square custom build</p>
                 <p className="text-2xl font-bold text-[#FCBF49]">Project-based</p>
                 <p className="text-xs text-neutral-500">yours forever, payment plans available</p>
               </div>

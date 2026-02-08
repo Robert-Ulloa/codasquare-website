@@ -33,7 +33,7 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="about" className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 right-[-10%] h-80 w-80 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>
@@ -70,7 +70,7 @@ export default function AboutSection() {
               Hi, I&apos;m <span className="text-[#FCBF49]">Roberto</span>
             </h2>
             <p className="text-lg text-neutral-300 leading-relaxed mb-4">
-              I started Coda Square after helping my partner run his business and seeing how hard it can be
+              I started CODA x Square after helping my partner run his business and seeing how hard it can be
               to make Square match real-world workflows. We tried white-label options and generic tools,
               but none of them felt right or flexible enough for the business we were building.
             </p>

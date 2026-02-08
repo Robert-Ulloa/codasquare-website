@@ -3,10 +3,11 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { HiSparkles, HiCheckCircle } from 'react-icons/hi'
+import { analytics } from '@/lib/analytics'
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-32 right-[-12%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
         <div className="absolute top-1/3 left-[-10%] h-96 w-96 rounded-full bg-[#D62828]/15 blur-3xl" />
@@ -73,10 +74,10 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#contact" className="btn-primary text-center">
+              <Link href="#contact" onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')} className="btn-primary text-center">
                 Book Free Consultation
               </Link>
-              <Link href="#work" className="btn-secondary text-center">
+              <Link href="#work" onClick={() => analytics.ctaClick('See Our Work', 'hero')} className="btn-secondary text-center">
                 See Our Work
               </Link>
             </div>

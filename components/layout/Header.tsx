@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { HiMenu, HiX } from 'react-icons/hi'
+import { analytics } from '@/lib/analytics'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="text-2xl font-bold text-[#EAE2B7]">
-              Coda<span className="text-[#F77F00]">Square</span>
+              CODA <span className="text-[#F77F00]">x</span> Square
             </div>
           </Link>
 
@@ -51,6 +52,7 @@ export default function Header() {
             ))}
             <Link
               href="#contact"
+              onClick={() => analytics.ctaClick('Book Consultation', 'header')}
               className="btn-primary"
             >
               Book Consultation

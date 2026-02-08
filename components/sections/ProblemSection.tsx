@@ -23,7 +23,7 @@ export default function ProblemSection() {
   ]
 
   return (
-    <section className="section-padding bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 left-[8%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>

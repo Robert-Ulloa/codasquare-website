@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { HiMail, HiLocationMarker, HiCalendar } from 'react-icons/hi'
+import { analytics } from '@/lib/analytics'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,16 +15,82 @@ export default function ContactSection() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
+  const [formStarted, setFormStarted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Listen for pricing tier clicks to pre-fill the form
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail?.tier) {
+        setFormData((prev) => ({
+          ...prev,
+          message: prev.message
+            ? prev.message
+            : `Interested in the ${detail.tier} tier.`,
+        }))
+      }
+    }
+    window.addEventListener('prefill-contact', handler)
+    return () => window.removeEventListener('prefill-contact', handler)
+  }, [])
+
+  // Track first form interaction
+  const handleFormInteraction = () => {
+    if (!formStarted) {
+      setFormStarted(true)
+      analytics.formStart()
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Connect to Formspree, Basin, or Resend
-    // For now, just show success state
-    setSubmitted(true)
+    setSubmitting(true)
+    setError('')
+
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+
+    if (!formspreeId) {
+      // No Formspree ID configured — show success for development
+      console.warn('NEXT_PUBLIC_FORMSPREE_ID not set. Form data:', formData)
+      analytics.formSubmit()
+      setSubmitted(true)
+      setSubmitting(false)
+      return
+    }
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          business_name: formData.shopName,
+          locations: formData.locations,
+          interest: formData.interest,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        analytics.formSubmit()
+        setSubmitted(true)
+      } else {
+        analytics.formError('submission_failed')
+        setError('Something went wrong. Please try emailing us directly.')
+      }
+    } catch {
+      analytics.formError('network_error')
+      setError('Network error. Please try emailing us directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
-    <section id="contact" className="section-padding bg-neutral-950 text-white relative overflow-hidden">
+    <section id="contact" className="section-padding section-snap bg-neutral-950 text-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 right-[-8%] h-80 w-80 rounded-full bg-[#D62828]/20 blur-3xl" />
         <div className="absolute bottom-[-20%] left-[10%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
@@ -101,6 +168,7 @@ export default function ContactSection() {
             ) : (
               <form
                 onSubmit={handleSubmit}
+                onChange={handleFormInteraction}
                 className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-5"
               >
                 <div>
@@ -144,7 +212,7 @@ export default function ContactSection() {
                       value={formData.shopName}
                       onChange={(e) => setFormData({ ...formData, shopName: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
-                    placeholder="My Business"
+                      placeholder="My Business"
                     />
                   </div>
 
@@ -200,11 +268,16 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-[#D62828] text-center">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#FCBF49] text-neutral-950 py-3 rounded-lg font-semibold hover:bg-[#F77F00] transition-all duration-200 shadow-md hover:shadow-lg"
+                  disabled={submitting}
+                  className="w-full bg-[#FCBF49] text-neutral-950 py-3 rounded-lg font-semibold hover:bg-[#F77F00] transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Book Free Consultation
+                  {submitting ? 'Sending...' : 'Book Free Consultation'}
                 </button>
 
                 <p className="text-xs text-neutral-400 text-center">

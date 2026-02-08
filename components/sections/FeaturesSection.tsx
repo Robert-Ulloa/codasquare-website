@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const tiers = [
   {
@@ -46,7 +47,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden"
+      className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden"
     >
       <div className="absolute inset-0">
         <div className="absolute -top-32 right-[-10%] h-80 w-80 rounded-full bg-[#F77F00]/20 blur-3xl" />
@@ -137,13 +138,16 @@ export default function FeaturesSection() {
                 {tier.bestFor}
               </p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#003049] via-[#D62828] to-[#FCBF49]"
-              />
+              <Link
+                href="#pricing"
+                className={`mt-6 block text-center w-full py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                  tier.popular
+                    ? "bg-[#FCBF49] text-neutral-950 hover:bg-[#F77F00] shadow-md hover:shadow-lg"
+                    : "bg-white/10 text-neutral-200 hover:bg-white/20 border border-white/10"
+                }`}
+              >
+                See Pricing
+              </Link>
             </motion.div>
           ))}
         </motion.div>

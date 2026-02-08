@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-1">
             <div className="text-2xl font-bold text-[#EAE2B7] mb-4">
-              Coda<span className="text-[#F77F00]">Square</span>
+              CODA <span className="text-[#F77F00]">x</span> Square
             </div>
             <p className="text-sm mb-4">
               Custom apps and websites built for independent and new businesses.
@@ -122,7 +122,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-center md:text-left">
-              © {currentYear} Coda Square. Built with care for independent and new businesses.
+              © {currentYear} CODA x Square. Built with care for independent and new businesses.
             </p>
             <p className="text-sm text-center md:text-right">
               Based in London • Serving the United States

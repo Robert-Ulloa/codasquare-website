@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiChevronDown } from 'react-icons/hi'
+import { analytics } from '@/lib/analytics'
 
 const faqs = [
   {
@@ -59,7 +60,10 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
       className="border-b border-white/10 last:border-0"
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          if (!isOpen) analytics.faqOpen(faq.question)
+          setIsOpen(!isOpen)
+        }}
         className="flex items-center justify-between w-full py-5 text-left"
       >
         <span className="text-lg font-medium text-neutral-100 pr-4">{faq.question}</span>
@@ -88,7 +92,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 
 export default function FAQSection() {
   return (
-    <section className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -bottom-20 left-[10%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>

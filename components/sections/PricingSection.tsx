@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { HiCheck } from 'react-icons/hi'
-import Link from 'next/link'
+import { analytics } from '@/lib/analytics'
 
 const plans = [
   {
@@ -63,9 +63,17 @@ const addOns = [
   { name: 'Priority Support', price: '$500/mo', description: 'Dedicated support with guaranteed response times' },
 ]
 
+function handleTierClick(tierName: string) {
+  analytics.pricingTierClick(tierName)
+  window.dispatchEvent(
+    new CustomEvent('prefill-contact', { detail: { tier: tierName } })
+  )
+  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export default function PricingSection() {
   return (
-    <section id="pricing" className="section-padding bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section id="pricing" className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 left-[6%] h-72 w-72 rounded-full bg-[#D62828]/15 blur-3xl" />
       </div>
@@ -136,8 +144,8 @@ export default function PricingSection() {
                 <span className="font-medium">Best for:</span> {plan.bestFor}
               </p>
 
-              <Link
-                href="#contact"
+              <button
+                onClick={() => handleTierClick(plan.name)}
                 className={`block text-center w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
                   plan.popular
                     ? 'bg-[#FCBF49] text-neutral-950 hover:bg-[#F77F00] shadow-md hover:shadow-lg'
@@ -145,7 +153,7 @@ export default function PricingSection() {
                 }`}
               >
                 {plan.cta}
-              </Link>
+              </button>
             </motion.div>
           ))}
         </motion.div>
