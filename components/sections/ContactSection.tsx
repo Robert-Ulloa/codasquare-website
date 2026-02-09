@@ -63,7 +63,10 @@ export default function ContactSection() {
     try {
       const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
