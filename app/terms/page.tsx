@@ -13,7 +13,7 @@ export default function TermsOfService() {
 
           <h2 className="text-xl font-semibold text-neutral-50">Services</h2>
           <p>
-            CODA x Square provides custom software development services including mobile apps, websites,
+            CODA for Square provides custom software development services including mobile apps, websites,
             and Square POS integrations for independent businesses. All project scope, timelines, and
             pricing are determined during the discovery phase and outlined in a project agreement.
           </p>

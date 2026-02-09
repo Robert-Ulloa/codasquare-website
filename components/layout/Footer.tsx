@@ -6,16 +6,16 @@ export default function Footer() {
 
   const footerSections = {
     solutions: [
-      { label: 'Mobile Apps', href: '#features' },
-      { label: 'Websites', href: '#features' },
-      { label: 'Square Optimization', href: '#features' },
-      { label: 'Consulting', href: '#features' },
+      { label: 'Solutions', href: '/solutions#solutions' },
+      { label: 'Features', href: '/solutions#features' },
+      { label: 'Process', href: '/process#how-it-works' },
     ],
     company: [
-      { label: 'About', href: '#about' },
-      { label: 'Portfolio', href: '#work' },
-      { label: 'How It Works', href: '#how-it-works' },
-      { label: 'Pricing', href: '#pricing' },
+      { label: 'About', href: '/about#about' },
+      { label: 'Who This Is For', href: '/about' },
+      { label: 'Work', href: '/work#work' },
+      { label: 'Pricing', href: '/pricing#pricing' },
+      { label: 'Contact', href: '/contact#contact' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
@@ -31,8 +31,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-1">
-            <div className="text-2xl font-bold text-[#EAE2B7] mb-4">
-              CODA <span className="text-[#F77F00]">x</span> Square
+            <div className="text-2xl font-bold text-[#EAE2B7] mb-4 flex items-baseline gap-2">
+              CODA
+              <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
+              <span className="text-[#F77F00]">Square</span>
             </div>
             <p className="text-sm mb-4">
               Custom apps and websites built for independent and new businesses.
@@ -122,7 +124,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-center md:text-left">
-              © {currentYear} CODA x Square. Built with care for independent and new businesses.
+              © {currentYear} CODA for Square. Built with care for independent and new businesses.
             </p>
             <p className="text-sm text-center md:text-right">
               Based in London • Serving the United States

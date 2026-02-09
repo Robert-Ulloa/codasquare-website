@@ -7,15 +7,15 @@ const raleway = Raleway({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' })
 
 export const metadata: Metadata = {
-  title: 'CODA x Square - Custom Apps & Websites for Independent Businesses',
+  title: 'CODA for Square - Custom Apps & Websites for Independent Businesses',
   description: 'Purpose-built ordering apps and websites for independent and new businesses. No templates. No subscriptions. Built with Square integration.',
   keywords: ['custom ordering app', 'square integration', 'independent business website', 'mobile ordering', 'custom storefront'],
-  authors: [{ name: 'Roberto - CODA x Square' }],
+  authors: [{ name: 'Roberto - CODA for Square' }],
   openGraph: {
-    title: 'CODA x Square - Custom Apps & Websites for Independent Businesses',
+    title: 'CODA for Square - Custom Apps & Websites for Independent Businesses',
     description: 'Purpose-built ordering apps and websites for independent and new businesses.',
     url: 'https://codasquare.com',
-    siteName: 'CODA x Square',
+    siteName: 'CODA for Square',
     locale: 'en_US',
     type: 'website',
   },

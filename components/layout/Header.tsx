@@ -18,10 +18,10 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { href: '#solutions', label: 'Solutions' },
-    { href: '#how-it-works', label: 'How It Works' },
-    { href: '#work', label: 'Work' },
-    { href: '#pricing', label: 'Pricing' },
+    { href: '/solutions', label: 'Solutions' },
+    { href: '/process', label: 'How It Works' },
+    { href: '/work', label: 'Work' },
+    { href: '/pricing', label: 'Pricing' },
   ]
 
   return (
@@ -34,8 +34,10 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-[#EAE2B7]">
-              CODA <span className="text-[#F77F00]">x</span> Square
+            <div className="text-2xl font-bold text-[#EAE2B7] flex items-baseline gap-2">
+              CODA
+              <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
+              <span className="text-[#F77F00]">Square</span>
             </div>
           </Link>
 
@@ -51,7 +53,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => analytics.ctaClick('Book Consultation', 'header')}
               className="btn-primary"
             >
@@ -89,7 +91,7 @@ export default function Header() {
               ))}
               <div className="px-4">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="btn-primary w-full text-center block"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

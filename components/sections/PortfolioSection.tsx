@@ -130,7 +130,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mt-12"
         >
-          <Link href="#contact" onClick={() => analytics.ctaClick('Start Your Project', 'portfolio')} className="btn-primary">
+          <Link href="/contact" onClick={() => analytics.ctaClick('Start Your Project', 'portfolio')} className="btn-primary">
             Start Your Project
           </Link>
         </motion.div>

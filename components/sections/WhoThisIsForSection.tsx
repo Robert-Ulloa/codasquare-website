@@ -82,7 +82,7 @@ export default function WhoThisIsForSection() {
             </div>
             <p className="mt-6 text-sm text-neutral-400 italic">
               Being upfront saves us both time. If you&apos;re not sure, let&apos;s talk —{' '}
-              <Link href="#contact" className="text-[#FCBF49] hover:text-[#F77F00] underline underline-offset-2 transition-colors not-italic">
+              <Link href="/contact" className="text-[#FCBF49] hover:text-[#F77F00] underline underline-offset-2 transition-colors not-italic">
                 the consultation is free
               </Link>.
             </p>

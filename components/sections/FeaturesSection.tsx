@@ -139,7 +139,7 @@ export default function FeaturesSection() {
               </p>
 
               <Link
-                href="#pricing"
+                href="/pricing"
                 className={`mt-6 block text-center w-full py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   tier.popular
                     ? "bg-[#FCBF49] text-neutral-950 hover:bg-[#F77F00] shadow-md hover:shadow-lg"

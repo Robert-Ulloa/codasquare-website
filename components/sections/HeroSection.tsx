@@ -74,10 +74,10 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#contact" onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')} className="btn-primary text-center">
+              <Link href="/contact" onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')} className="btn-primary text-center">
                 Book Free Consultation
               </Link>
-              <Link href="#work" onClick={() => analytics.ctaClick('See Our Work', 'hero')} className="btn-secondary text-center">
+              <Link href="/work" onClick={() => analytics.ctaClick('See Our Work', 'hero')} className="btn-secondary text-center">
                 See Our Work
               </Link>
             </div>

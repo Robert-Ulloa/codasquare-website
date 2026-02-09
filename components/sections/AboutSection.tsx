@@ -70,7 +70,7 @@ export default function AboutSection() {
               Hi, I&apos;m <span className="text-[#FCBF49]">Roberto</span>
             </h2>
             <p className="text-lg text-neutral-300 leading-relaxed mb-4">
-              I started CODA x Square after helping my partner run his business and seeing how hard it can be
+              I started CODA for Square after helping my partner run his business and seeing how hard it can be
               to make Square match real-world workflows. We tried white-label options and generic tools,
               but none of them felt right or flexible enough for the business we were building.
             </p>
