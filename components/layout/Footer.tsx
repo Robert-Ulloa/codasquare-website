@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaLinkedin, FaGlobe, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
@@ -31,10 +32,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-1">
-            <div className="text-2xl font-bold text-[#EAE2B7] mb-4 flex items-baseline gap-2">
-              CODA
-              <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
-              <span className="text-[#F77F00]">Square</span>
+            <div className="text-2xl font-bold text-[#EAE2B7] mb-4 flex items-center gap-3">
+              <Image src="/images/logo.png" alt="CODA for Square logo" width={28} height={28} className="rounded-md" />
+              <span className="flex items-baseline gap-2">
+                CODA
+                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
+                <span className="text-[#F77F00]">Square</span>
+              </span>
             </div>
             <p className="text-sm mb-4">
               Custom apps and websites built for independent and new businesses.

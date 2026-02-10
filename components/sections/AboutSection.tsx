@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { HiOfficeBuilding, HiShieldCheck, HiCube, HiKey, HiTranslate } from 'react-icons/hi'
 
 const highlights = [
@@ -48,13 +49,15 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="aspect-square max-w-md mx-auto bg-gradient-to-br from-[#003049] to-[#D62828] rounded-2xl p-[1px]">
-              <div className="h-full w-full rounded-2xl bg-neutral-950 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-[#003049] rounded-full flex items-center justify-center border border-white/10">
-                    <span className="text-5xl font-bold text-[#EAE2B7]">R</span>
-                  </div>
-                  <p className="text-neutral-300 font-medium">Your photo here</p>
-                </div>
+              <div className="h-full w-full rounded-2xl bg-neutral-950 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/roberto.jpg"
+                  alt="Roberto Ulloa"
+                  width={900}
+                  height={900}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </div>
             </div>
           </motion.div>

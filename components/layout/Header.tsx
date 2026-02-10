@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { analytics } from '@/lib/analytics'
 
@@ -33,7 +34,8 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image src="/images/logo.png" alt="CODA for Square logo" width={28} height={28} className="rounded-md" />
             <div className="text-2xl font-bold text-[#EAE2B7] flex items-baseline gap-2">
               CODA
               <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>

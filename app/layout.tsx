@@ -18,6 +18,23 @@ export const metadata: Metadata = {
     siteName: 'CODA for Square',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'CODA for Square',
+      },
+    ],
+  },
+  icons: {
+    icon: '/images/logo.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CODA for Square - Custom Apps & Websites for Independent Businesses',
+    description: 'Purpose-built ordering apps and websites for independent and new businesses.',
+    images: ['/images/logo.png'],
   },
 }
 
