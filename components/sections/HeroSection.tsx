@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { HiSparkles, HiCheckCircle } from 'react-icons/hi'
 import { analytics } from '@/lib/analytics'
@@ -74,10 +75,18 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')} className="btn-primary text-center">
+              <Link
+                href="/contact"
+                onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')}
+                className="btn-primary text-center"
+              >
                 Book Free Consultation
               </Link>
-              <Link href="/work" onClick={() => analytics.ctaClick('See Our Work', 'hero')} className="btn-secondary text-center">
+              <Link
+                href="/work"
+                onClick={() => analytics.ctaClick('See Our Work', 'hero')}
+                className="btn-secondary text-center"
+              >
                 See Our Work
               </Link>
             </div>
@@ -91,15 +100,15 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              {/* Placeholder for app/website mockup */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#003049] via-[#D62828] to-[#F77F00] flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/15 rounded-2xl backdrop-blur-sm flex items-center justify-center">
-                    <HiSparkles className="w-16 h-16" />
-                  </div>
-                  <p className="text-lg font-semibold">App + Website Mockup</p>
-                  <p className="text-sm opacity-90">Replace with actual design screenshot</p>
-                </div>
+              <div className="aspect-[4/3] bg-neutral-900">
+                <Image
+                  src="/images/hero-app-mockup.png"
+                  alt="CODA for Square app and website mockup"
+                  width={1600}
+                  height={1200}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </div>
             </div>
 

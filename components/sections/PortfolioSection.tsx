@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { HiDeviceMobile, HiShoppingCart, HiChartBar, HiClock, HiCollection, HiCog } from 'react-icons/hi'
 import Link from 'next/link'
+import Image from 'next/image'
 import { analytics } from '@/lib/analytics'
 
 const caseStudies = [
@@ -17,6 +18,7 @@ const caseStudies = [
       { label: 'Items Organized', value: '1,000+', icon: HiCollection },
     ],
     tags: ['Square Optimization', 'Inventory Management', 'Staff Training', 'Custom Workflows'],
+    image: '/images/portfolio-nimble.png',
   },
   {
     title: 'Ordering Platform',
@@ -29,6 +31,7 @@ const caseStudies = [
       { label: 'Inventory', value: 'Real-time', icon: HiChartBar },
     ],
     tags: ['React Native', 'Next.js', 'Square API', 'Subscription System'],
+    image: '/images/portfolio-ordering-platform.png',
   },
   {
     title: 'Multi-Location Platform',
@@ -41,6 +44,7 @@ const caseStudies = [
       { label: 'Architecture', value: 'Franchise-ready', icon: HiCog },
     ],
     tags: ['Multi-location', 'Centralized Inventory', 'Location Menus', 'Franchise Architecture'],
+    image: '/images/portfolio-multi-location.png',
   },
 ]
 
@@ -78,15 +82,15 @@ export default function PortfolioSection() {
               className="bg-white/5 border border-white/10 rounded-2xl shadow-lg overflow-hidden"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Mockup placeholder */}
-                <div className="aspect-[4/3] lg:aspect-auto bg-gradient-to-br from-[#003049] via-[#D62828] to-[#F77F00] flex items-center justify-center p-8">
-                  <div className="text-center text-white">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-2xl backdrop-blur-sm flex items-center justify-center">
-                      <HiDeviceMobile className="w-12 h-12" />
-                    </div>
-                    <p className="text-lg font-semibold">{study.type}</p>
-                    <p className="text-sm text-white/80 mt-1">Screenshot coming soon</p>
-                  </div>
+                {/* Mockup */}
+                <div className="aspect-[4/3] lg:aspect-auto bg-neutral-900">
+                  <Image
+                    src={study.image}
+                    alt={`${study.title} mockup`}
+                    width={1600}
+                    height={1200}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
 
                 {/* Details */}
