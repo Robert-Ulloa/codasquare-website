@@ -93,7 +93,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-padding section-snap bg-neutral-950 text-white relative overflow-hidden">
+    <section id="contact" className="section-padding section-snap pt-28 md:pt-32 bg-neutral-950 text-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 right-[-8%] h-80 w-80 rounded-full bg-[#D62828]/20 blur-3xl" />
         <div className="absolute bottom-[-20%] left-[10%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />

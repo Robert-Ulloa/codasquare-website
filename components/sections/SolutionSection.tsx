@@ -12,7 +12,7 @@ export default function SolutionSection() {
   ]
 
   return (
-    <section id="solutions" className="section-padding section-snap bg-neutral-950 text-white relative overflow-hidden">
+    <section id="solutions" className="section-padding section-snap pt-28 md:pt-32 bg-neutral-950 text-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-20 right-[-8%] h-72 w-72 rounded-full bg-[#D62828]/20 blur-3xl" />
         <div className="absolute bottom-[-20%] left-[15%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />

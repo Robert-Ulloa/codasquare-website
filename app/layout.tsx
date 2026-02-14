@@ -20,21 +20,23 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/logo.png',
-        width: 1200,
-        height: 630,
+        url: '/images/coda-logo-mark.png',
+        width: 1536,
+        height: 1024,
         alt: 'CODA for Square',
       },
     ],
   },
   icons: {
-    icon: '/images/logo.png',
+    icon: '/images/coda-logo-mark.png',
+    shortcut: '/images/coda-logo-mark.png',
+    apple: '/images/coda-logo-mark.png',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'CODA for Square - Custom Apps & Websites for Independent Businesses',
     description: 'Purpose-built ordering apps and websites for independent and new businesses.',
-    images: ['/images/logo.png'],
+    images: ['/images/coda-logo-mark.png'],
   },
 }
 

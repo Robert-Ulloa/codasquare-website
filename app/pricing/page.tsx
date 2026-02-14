@@ -5,7 +5,7 @@ import FAQSection from '@/components/sections/FAQSection'
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0B1F2A]">
       <Header />
       <PricingSection />
       <FAQSection />

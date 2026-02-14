@@ -28,19 +28,21 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-neutral-950/90 backdrop-blur-md shadow-lg shadow-black/10 py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-transparent py-2' : 'bg-transparent py-3'
       }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <Image src="/images/logo.png" alt="CODA for Square logo" width={28} height={28} className="rounded-md" />
-            <div className="text-2xl font-bold text-[#EAE2B7] flex items-baseline gap-2">
-              CODA
-              <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
-              <span className="text-[#F77F00]">Square</span>
-            </div>
+          <Link href="/" aria-label="Go to home" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="CODA logo"
+              width={1536}
+              height={1024}
+              priority
+              className="block h-[124px] md:h-[144px] w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,7 +51,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-200 hover:text-[#FCBF49] transition-colors font-medium"
+                className="text-neutral-200 hover:text-[#FCBF49] transition-colors font-medium text-lg"
               >
                 {link.label}
               </Link>
@@ -57,7 +59,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => analytics.ctaClick('Book Consultation', 'header')}
-              className="btn-primary"
+              className="btn-primary text-base px-7 py-3"
             >
               Book Consultation
             </Link>

@@ -23,7 +23,7 @@ const plans = [
   },
   {
     name: 'Professional',
-    price: 'Custom',
+    price: '~$15,000',
     description: 'App + website with advanced features and deeper automation',
     features: [
       'Native mobile app + custom website',
@@ -73,7 +73,7 @@ function handleTierClick(tierName: string) {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section id="pricing" className="section-padding section-snap pt-28 md:pt-32 bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 left-[6%] h-72 w-72 rounded-full bg-[#D62828]/15 blur-3xl" />
       </div>

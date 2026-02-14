@@ -34,7 +34,7 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="about" className="section-padding section-snap pt-28 md:pt-32 bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute -top-24 right-[-10%] h-80 w-80 rounded-full bg-[#003049]/40 blur-3xl" />
       </div>
