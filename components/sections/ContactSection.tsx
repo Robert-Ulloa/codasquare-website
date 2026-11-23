@@ -93,10 +93,10 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-padding section-snap pt-28 md:pt-32 bg-neutral-950 text-white relative overflow-hidden">
+    <section id="contact" className="section-padding section-snap pt-28 md:pt-32 text-white relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-24 right-[-8%] h-80 w-80 rounded-full bg-[#D62828]/20 blur-3xl" />
-        <div className="absolute bottom-[-20%] left-[10%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
+        <div className="absolute -top-24 right-[-8%] h-80 w-80 rounded-full bg-coda-blue/20 blur-3xl" />
+        <div className="absolute bottom-[-20%] left-[10%] h-96 w-96 rounded-full bg-coda-red/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -109,7 +109,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="heading-lg mb-6">
-              Let&apos;s Build Something <span className="text-[#FCBF49]">Great</span>
+              Let&apos;s Build Something <span className="gradient-text">Great</span>
             </h2>
             <p className="text-xl text-neutral-300 leading-relaxed mb-8">
               Book a free 30-minute consultation. You&apos;ll speak directly with Roberto — the
@@ -119,11 +119,11 @@ export default function ContactSection() {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center border border-white/10">
-                  <HiMail className="w-5 h-5 text-[#FCBF49]" />
+                  <HiMail className="w-5 h-5 text-coda-sky" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral-400">Email</p>
-                  <a href="mailto:Roanuc8@gmail.com" className="font-medium hover:text-[#FCBF49] transition-colors">
+                  <a href="mailto:Roanuc8@gmail.com" className="font-medium hover:text-white transition-colors">
                     Roanuc8@gmail.com
                   </a>
                 </div>
@@ -131,7 +131,7 @@ export default function ContactSection() {
 
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center border border-white/10">
-                  <HiCalendar className="w-5 h-5 text-[#FCBF49]" />
+                  <HiCalendar className="w-5 h-5 text-coda-sky" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral-400">Response time</p>
@@ -141,7 +141,7 @@ export default function ContactSection() {
 
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center border border-white/10">
-                  <HiLocationMarker className="w-5 h-5 text-[#FCBF49]" />
+                  <HiLocationMarker className="w-5 h-5 text-coda-sky" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral-400">Serving</p>
@@ -160,7 +160,7 @@ export default function ContactSection() {
           >
             {submitted ? (
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center">
-                <div className="w-16 h-16 bg-[#FCBF49] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-coda-yellow rounded-full flex items-center justify-center mx-auto mb-4">
                   <HiMail className="w-8 h-8 text-neutral-950" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
@@ -184,7 +184,7 @@ export default function ContactSection() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -199,7 +199,7 @@ export default function ContactSection() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent"
                     placeholder="jane@mybusiness.com"
                   />
                 </div>
@@ -214,7 +214,7 @@ export default function ContactSection() {
                       id="shopName"
                       value={formData.shopName}
                       onChange={(e) => setFormData({ ...formData, shopName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent"
                       placeholder="My Business"
                     />
                   </div>
@@ -227,7 +227,7 @@ export default function ContactSection() {
                       id="locations"
                       value={formData.locations}
                       onChange={(e) => setFormData({ ...formData, locations: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent"
                     >
                       <option value="1" className="text-neutral-900">1 location</option>
                       <option value="2-3" className="text-neutral-900">2–3 locations</option>
@@ -245,7 +245,7 @@ export default function ContactSection() {
                     id="interest"
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent"
                   >
                     <option value="" className="text-neutral-900">Select a service...</option>
                     <option value="website" className="text-neutral-900">Custom website</option>
@@ -266,19 +266,19 @@ export default function ContactSection() {
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#FCBF49] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-coda-sky focus:border-transparent resize-none"
                     placeholder="Tell me about your business and what you're looking for..."
                   />
                 </div>
 
                 {error && (
-                  <p className="text-sm text-[#D62828] text-center">{error}</p>
+                  <p className="text-sm text-coda-red text-center">{error}</p>
                 )}
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[#FCBF49] text-neutral-950 py-3 rounded-lg font-semibold hover:bg-[#F77F00] transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-coda-yellow text-neutral-950 py-3 rounded-lg font-semibold hover:bg-coda-amber transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Sending...' : 'Book Free Consultation'}
                 </button>

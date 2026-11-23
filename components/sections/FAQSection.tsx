@@ -14,7 +14,7 @@ const faqs = [
   {
     question: 'What if I need changes after launch?',
     answer:
-      'Every project includes a post-launch support period (30–60 days depending on your tier). After that, we offer optional maintenance plans starting at $200/month, or you can hire any developer to make changes — the code is yours.',
+      'Every project includes a post-launch support period (30–60 days depending on your tier). After that, you can choose an optional maintenance plan (quoted to fit what you need), or hire any developer to make changes — the code is yours.',
   },
   {
     question: 'How long does it take to build my app and website?',
@@ -92,9 +92,9 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 
 export default function FAQSection() {
   return (
-    <section className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -bottom-20 left-[10%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+        <div className="absolute -bottom-20 left-[10%] h-72 w-72 rounded-full bg-coda-blue/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -106,7 +106,7 @@ export default function FAQSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg text-neutral-50 mb-4">
-            Frequently Asked <span className="text-[#FCBF49]">Questions</span>
+            Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
             Everything you need to know before getting started.

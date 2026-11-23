@@ -7,7 +7,6 @@ import { analytics } from '@/lib/analytics'
 const plans = [
   {
     name: 'Starter',
-    price: 'Custom',
     description: 'Website or app to validate your idea and launch fast',
     features: [
       'Mobile app OR custom website',
@@ -23,7 +22,6 @@ const plans = [
   },
   {
     name: 'Professional',
-    price: '~$15,000',
     description: 'App + website with advanced features and deeper automation',
     features: [
       'Native mobile app + custom website',
@@ -35,12 +33,11 @@ const plans = [
       '90 days post-launch support',
     ],
     bestFor: 'Established businesses ready to scale',
-    cta: 'Most Popular',
+    cta: 'Get a Quote',
     popular: true,
   },
   {
     name: 'Enterprise',
-    price: 'Custom',
     description: 'Multi-location platform with ongoing partnership',
     features: [
       'Everything in Professional',
@@ -58,9 +55,9 @@ const plans = [
 ]
 
 const addOns = [
-  { name: 'Maintenance', price: 'from $200/mo', description: 'Updates, bug fixes & hosting management' },
-  { name: 'Feature Additions', price: 'from $200/mo', description: 'New features as your business grows' },
-  { name: 'Priority Support', price: '$500/mo', description: 'Dedicated support with guaranteed response times' },
+  { name: 'Maintenance', description: 'Updates, bug fixes & hosting management' },
+  { name: 'Feature Additions', description: 'New features as your business grows' },
+  { name: 'Priority Support', description: 'Dedicated support with guaranteed response times' },
 ]
 
 function handleTierClick(tierName: string) {
@@ -73,9 +70,9 @@ function handleTierClick(tierName: string) {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="section-padding section-snap pt-28 md:pt-32 bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="pricing" className="section-padding section-snap pt-28 md:pt-32 bg-transparent text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-24 left-[6%] h-72 w-72 rounded-full bg-[#D62828]/15 blur-3xl" />
+        <div className="absolute -top-24 left-[6%] h-72 w-72 rounded-full bg-coda-blue/15 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -87,10 +84,10 @@ export default function PricingSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg text-neutral-50 mb-4">
-            Flexible Pricing, <span className="text-[#FCBF49]">Right-Fit Scope</span>
+            Packages Sized to <span className="gradient-text">Your Business</span>
           </h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-            Pricing depends on scope and complexity. No platform fees. Full source code included.
+            Every project is quoted on scope after a free call, so you only pay for what you need. No monthly platform fees, no cut of your orders, and the full source code is yours.
           </p>
         </motion.div>
 
@@ -114,27 +111,24 @@ export default function PricingSection() {
               whileHover={{ y: -6 }}
               className={`relative rounded-2xl p-8 border backdrop-blur ${
                 plan.popular
-                  ? 'bg-white/10 border-[#FCBF49]/50 shadow-[0_20px_60px_rgba(252,191,73,0.15)]'
+                  ? 'bg-white/10 border-coda-sky/50 shadow-[0_20px_60px_rgba(56,189,248,0.15)]'
                   : 'bg-white/5 border-white/10'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FCBF49] text-neutral-950 text-sm font-semibold px-4 py-1 rounded-full">
-                  Best Value
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-coda-yellow text-neutral-950 text-sm font-semibold px-4 py-1 rounded-full">
+                  Most Popular
                 </div>
               )}
 
               <h3 className="text-xl font-bold text-neutral-50 mb-2">{plan.name}</h3>
-              <div className="mb-2">
-                <span className="text-3xl font-bold text-[#FCBF49]">{plan.price}</span>
-                <span className="text-sm font-semibold text-neutral-300 ml-2 uppercase tracking-wide">project-based</span>
-              </div>
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.12em] text-coda-sky">Project-based · free quote</p>
               <p className="text-neutral-300 mb-6">{plan.description}</p>
 
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start space-x-3">
-                    <HiCheck className="w-5 h-5 text-[#FCBF49] flex-shrink-0 mt-0.5" />
+                    <HiCheck className="w-5 h-5 text-coda-sky flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-neutral-200">{feature}</span>
                   </li>
                 ))}
@@ -146,10 +140,10 @@ export default function PricingSection() {
 
               <button
                 onClick={() => handleTierClick(plan.name)}
-                className={`block text-center w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
+                className={`block text-center w-full py-3 rounded-full font-semibold transition-all duration-200 ${
                   plan.popular
-                    ? 'bg-[#FCBF49] text-neutral-950 hover:bg-[#F77F00] shadow-md hover:shadow-lg'
-                    : 'bg-[#F77F00] text-neutral-950 hover:bg-[#FCBF49] shadow-md hover:shadow-lg'
+                    ? 'bg-coda-yellow text-neutral-950 hover:bg-coda-amber shadow-md hover:shadow-lg'
+                    : 'bg-coda-amber text-neutral-950 hover:bg-coda-yellow shadow-md hover:shadow-lg'
                 }`}
               >
                 {plan.cta}
@@ -171,7 +165,6 @@ export default function PricingSection() {
             {addOns.map((addon) => (
               <div key={addon.name} className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm text-center">
                 <p className="font-semibold text-neutral-50">{addon.name}</p>
-                <p className="text-[#FCBF49] font-bold mt-1">{addon.price}</p>
                 <p className="text-sm text-neutral-400 mt-1">{addon.description}</p>
               </div>
             ))}
@@ -185,7 +178,7 @@ export default function PricingSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center text-neutral-500 text-sm mt-8"
         >
-          All prices in USD. Exact pricing determined after discovery call. Payment plans available.
+          Quotes are free and come after a short discovery call. Payment plans available.
         </motion.p>
       </div>
     </section>

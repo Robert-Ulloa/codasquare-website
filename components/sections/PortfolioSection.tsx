@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiDeviceMobile, HiShoppingCart, HiChartBar, HiClock, HiCollection, HiCog } from 'react-icons/hi'
+import { HiDeviceMobile, HiShoppingCart, HiChartBar, HiCollection, HiCog } from 'react-icons/hi'
 import Link from 'next/link'
 import Image from 'next/image'
 import { analytics } from '@/lib/analytics'
@@ -9,16 +9,17 @@ import { analytics } from '@/lib/analytics'
 const caseStudies = [
   {
     title: 'Nimble Chicago',
-    type: 'Square Optimization + Custom Workflows',
+    type: 'Live product · Custom ordering app + Square',
     description:
-      'Reorganized Nimble Chicago’s entire Square system — over 1,000 items cataloged, custom workflows built, and staff trained on the new setup. The result: dramatically faster service and a surge in online orders.',
+      'A branded iOS and Android ordering app with an admin dashboard for a Chicago café, connected to their Square POS. We also reorganized their Square catalog (over 1,000 items) so menu, stock and payments stay accurate everywhere.',
     results: [
-      { label: 'Faster Checkout', value: '40%', icon: HiClock },
-      { label: 'Online Orders', value: '+25%', icon: HiShoppingCart },
+      { label: 'Orders after launch', value: '+35%', icon: HiShoppingCart },
+      { label: 'Live on', value: 'iOS + Android', icon: HiDeviceMobile },
       { label: 'Items Organized', value: '1,000+', icon: HiCollection },
     ],
-    tags: ['Square Optimization', 'Inventory Management', 'Staff Training', 'Custom Workflows'],
-    image: '/images/portfolio-nimble.png',
+    tags: ['React Native', 'Next.js', 'Square API', 'App Store & Google Play'],
+    image: '',
+    screens: ['/images/work/nimble-home.jpg', '/images/work/nimble-menu.jpg'],
   },
   {
     title: 'Ordering Platform',
@@ -50,9 +51,9 @@ const caseStudies = [
 
 export default function PortfolioSection() {
   return (
-    <section id="work" className="section-padding section-snap pt-28 md:pt-32 bg-neutral-950 text-neutral-100 relative overflow-hidden">
+    <section id="work" className="section-padding section-snap pt-28 md:pt-32 text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-24 left-[8%] h-80 w-80 rounded-full bg-[#D62828]/15 blur-3xl" />
+        <div className="absolute -top-24 left-[8%] h-80 w-80 rounded-full bg-coda-blue/15 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -64,7 +65,7 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg text-neutral-50 mb-4">
-            See What We&apos;ve <span className="text-[#FCBF49]">Built</span>
+            See What We&apos;ve <span className="gradient-text">Built</span>
           </h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
             Real projects, real results. Here&apos;s what custom software looks like in action.
@@ -83,19 +84,34 @@ export default function PortfolioSection() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Mockup */}
-                <div className="aspect-[4/3] lg:aspect-auto bg-neutral-900">
-                  <Image
-                    src={study.image}
-                    alt={`${study.title} mockup`}
-                    width={1600}
-                    height={1200}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                {'screens' in study && study.screens ? (
+                  <div className="relative flex aspect-[4/3] items-end justify-center gap-4 overflow-hidden bg-[radial-gradient(circle_at_50%_30%,#1d3a6e,#0a1222_72%)] px-8 pt-10 lg:aspect-auto lg:min-h-[420px]">
+                    {study.screens.map((src, i) => (
+                      <Image
+                        key={src}
+                        src={src}
+                        alt={`${study.title} app screen ${i + 1}`}
+                        width={390}
+                        height={844}
+                        className={`w-[38%] rounded-t-[24px] border-4 border-b-0 border-[#05070d] shadow-2xl ${i === 0 ? '-rotate-[4deg] translate-y-6' : 'rotate-[4deg]'}`}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="aspect-[4/3] lg:aspect-auto bg-neutral-900">
+                    <Image
+                      src={study.image}
+                      alt={`${study.title} mockup`}
+                      width={1600}
+                      height={1200}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                )}
 
                 {/* Details */}
                 <div className="p-8 lg:p-10">
-                  <p className="text-sm font-semibold text-[#FCBF49] mb-2">{study.type}</p>
+                  <p className="text-sm font-semibold text-coda-sky mb-2">{study.type}</p>
                   <h3 className="text-2xl font-bold text-neutral-50 mb-4">{study.title}</h3>
                   <p className="text-neutral-300 leading-relaxed mb-6">{study.description}</p>
 
@@ -103,8 +119,8 @@ export default function PortfolioSection() {
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {study.results.map((result, i) => (
                       <div key={i} className="text-center">
-                        <result.icon className="w-5 h-5 text-[#FCBF49] mx-auto mb-1" />
-                        <p className="text-xl font-bold text-[#FCBF49]">{result.value}</p>
+                        <result.icon className="w-5 h-5 text-coda-sky mx-auto mb-1" />
+                        <p className="text-xl font-bold text-coda-sky">{result.value}</p>
                         <p className="text-xs text-neutral-400">{result.label}</p>
                       </div>
                     ))}

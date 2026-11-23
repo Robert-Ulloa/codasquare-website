@@ -14,17 +14,17 @@ const perfectFor = [
 ]
 
 const notFor = [
-  'Need to launch tomorrow (custom takes 8–12 weeks)',
-  'Extremely tight budgets (starting at $3K)',
+  'Need to launch tomorrow (custom work takes a few weeks)',
+  'Have no budget set aside for a project yet',
   'Change their mind constantly mid-project',
   'Just want the cheapest option available',
 ]
 
 export default function WhoThisIsForSection() {
   return (
-    <section className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-transparent text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-12 left-[-8%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+        <div className="absolute top-12 left-[-8%] h-72 w-72 rounded-full bg-coda-blue/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -36,7 +36,7 @@ export default function WhoThisIsForSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg text-neutral-50 mb-4">
-            Built For Shops That Are <span className="text-[#FCBF49]">Ready to Grow</span>
+            Built For Shops That Are <span className="gradient-text">Ready to Grow</span>
           </h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
             We work best with independent business owners who know their brand deserves more than a cookie-cutter app.
@@ -52,11 +52,11 @@ export default function WhoThisIsForSection() {
             transition={{ duration: 0.6 }}
             className="bg-white/5 border border-white/10 rounded-2xl shadow-lg p-8"
           >
-            <h3 className="text-xl font-bold text-[#FCBF49] mb-6">Perfect For Independent Businesses That…</h3>
+            <h3 className="text-xl font-bold text-coda-sky mb-6">Perfect For Independent Businesses That…</h3>
             <div className="space-y-4">
               {perfectFor.map((item) => (
                 <div key={item} className="flex items-start space-x-3">
-                  <HiCheckCircle className="w-5 h-5 text-[#FCBF49] flex-shrink-0 mt-0.5" />
+                  <HiCheckCircle className="w-5 h-5 text-coda-sky flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-200">{item}</span>
                 </div>
               ))}
@@ -82,7 +82,7 @@ export default function WhoThisIsForSection() {
             </div>
             <p className="mt-6 text-sm text-neutral-400 italic">
               Being upfront saves us both time. If you&apos;re not sure, let&apos;s talk —{' '}
-              <Link href="/contact" className="text-[#FCBF49] hover:text-[#F77F00] underline underline-offset-2 transition-colors not-italic">
+              <Link href="/contact" className="text-coda-sky hover:text-white underline underline-offset-2 transition-colors not-italic">
                 the consultation is free
               </Link>.
             </p>

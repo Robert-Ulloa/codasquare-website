@@ -34,9 +34,9 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding section-snap pt-28 md:pt-32 bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="about" className="section-padding section-snap pt-28 md:pt-32 bg-transparent text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-24 right-[-10%] h-80 w-80 rounded-full bg-[#003049]/40 blur-3xl" />
+        <div className="absolute -top-24 right-[-10%] h-80 w-80 rounded-full bg-coda-blue/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -48,7 +48,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="aspect-square max-w-md mx-auto bg-gradient-to-br from-[#003049] to-[#D62828] rounded-2xl p-[1px]">
+            <div className="aspect-square max-w-md mx-auto bg-gradient-to-br from-coda-blue to-coda-red rounded-2xl p-[1px]">
               <div className="h-full w-full rounded-2xl bg-neutral-950 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/roberto.jpg"
@@ -70,7 +70,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 className="heading-lg text-neutral-50 mb-6">
-              Hi, I&apos;m <span className="text-[#FCBF49]">Roberto</span>
+              Hi, I&apos;m <span className="gradient-text">Roberto</span>
             </h2>
             <p className="text-lg text-neutral-300 leading-relaxed mb-4">
               I started CODA for Square after helping my partner run his business and seeing how hard it can be
@@ -95,7 +95,7 @@ export default function AboutSection() {
                   className="flex items-start space-x-4"
                 >
                   <div className="flex-shrink-0 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center border border-white/10">
-                    <item.icon className="w-5 h-5 text-[#FCBF49]" />
+                    <item.icon className="w-5 h-5 text-coda-sky" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-50">{item.title}</h3>

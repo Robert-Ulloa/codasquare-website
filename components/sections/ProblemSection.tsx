@@ -13,7 +13,7 @@ export default function ProblemSection() {
     {
       icon: HiClock,
       title: 'Phone orders overwhelm your team',
-      description: "Every call during morning rush costs you 3-5 minutes. Your baristas can't focus on the customers right in front of them.",
+      description: "Every call during a rush pulls someone off the counter. Your team can't focus on the customers right in front of them.",
     },
     {
       icon: HiChartBar,
@@ -23,9 +23,9 @@ export default function ProblemSection() {
   ]
 
   return (
-    <section className="section-padding section-snap bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section className="section-padding section-snap bg-transparent text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-24 left-[8%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+        <div className="absolute -top-24 left-[8%] h-72 w-72 rounded-full bg-coda-blue/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -61,7 +61,7 @@ export default function ProblemSection() {
               whileHover={{ y: -6 }}
               className="card text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 text-[#FCBF49] rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 text-coda-sky rounded-full mb-6">
                 <problem.icon className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-neutral-50 mb-4">

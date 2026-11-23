@@ -3,140 +3,152 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { HiSparkles, HiCheckCircle } from 'react-icons/hi'
+import { HiCheckCircle, HiArrowRight } from 'react-icons/hi'
 import { analytics } from '@/lib/analytics'
+
+const trust = ['Connected to Square', 'No monthly platform fees', 'You own the code']
+const capabilities = [
+  'Mobile ordering apps', 'Ordering websites', 'Square POS sync', 'Loyalty & rewards', 'Push notifications',
+  'Admin dashboards', 'iOS & Android', 'Menu & stock sync', 'Gift cards', 'Customer accounts',
+]
+
+const words = ['Custom', 'ordering', 'apps', 'for', 'independent', 'businesses,']
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute -top-32 right-[-12%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
-        <div className="absolute top-1/3 left-[-10%] h-96 w-96 rounded-full bg-[#D62828]/15 blur-3xl" />
-        <div className="absolute bottom-[-20%] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#FCBF49]/20 blur-3xl" />
-      </div>
-
-      <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+    <section className="relative overflow-hidden pt-32 md:pt-40">
+      <div className="container-custom relative z-10 grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 12, filter: 'blur(6px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7 }}
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-coda-sky/30 bg-coda-sky/10 px-4 py-1.5 text-sm font-semibold text-sky-200"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center space-x-2 bg-white/10 text-[#FCBF49] px-4 py-2 rounded-full mb-6"
-            >
-              <HiSparkles className="w-4 h-4" />
-              <span className="text-sm font-medium">Custom Apps • Powered by Square</span>
-            </motion.div>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coda-sky opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-coda-sky" />
+            </span>
+            Taking on new projects
+          </motion.p>
 
-            <h1 className="heading-xl text-neutral-50 mb-6">
-              More Orders, Fewer Headaches —{' '}
-              <span className="text-[#FCBF49]">Custom Apps</span> Powered by{' '}
-              <span className="text-[#F77F00]">Square</span>
-            </h1>
-
-            <p className="text-xl text-neutral-300 mb-8 leading-relaxed">
-              Custom ordering apps and storefront websites for independent and new businesses.
-              One build. Your brand. Your rules.
-            </p>
-
-            {/* Trust Badges */}
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.08 } },
-              }}
-              className="flex flex-wrap gap-4 mb-8"
-            >
-              {[
-                'Custom apps powered by Square',
-                'Built for Independent Businesses',
-                'You Own Everything',
-              ].map((item) => (
-                <motion.div
-                  key={item}
-                  variants={{
-                    hidden: { opacity: 0, y: 10 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-                  }}
-                  className="flex items-center space-x-2 text-neutral-300"
-                >
-                  <HiCheckCircle className="w-5 h-5 text-[#FCBF49]" />
-                  <span className="text-sm font-medium">{item}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                onClick={() => analytics.ctaClick('Book Free Consultation', 'hero')}
-                className="btn-primary text-center"
+          <h1 className="heading-xl mb-6 text-white">
+            {words.map((word, i) => (
+              <motion.span
+                key={word}
+                className="inline-block"
+                initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.8, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
               >
-                Book Free Consultation
-              </Link>
-              <Link
-                href="/work"
-                onClick={() => analytics.ctaClick('See Our Work', 'hero')}
-                className="btn-secondary text-center"
-              >
-                See Our Work
-              </Link>
-            </div>
+                {word}&nbsp;
+              </motion.span>
+            ))}
+            <motion.span
+              className="gradient-text inline-block pb-1"
+              initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            >
+              without the monthly fees.
+            </motion.span>
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-300 md:text-xl"
+          >
+            Your own branded app and website, connected to your Square POS. One project, built for how your business
+            works, and yours to keep. No templates, no per-order cut.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.85 }}
+            className="mb-8 flex flex-col gap-3 sm:flex-row"
+          >
+            <Link href="/contact" onClick={() => analytics.ctaClick('Free Quote', 'hero')} className="btn-primary">
+              Get a free quote <HiArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/work" onClick={() => analytics.ctaClick('See Our Work', 'hero')} className="btn-secondary">
+              See our work
+            </Link>
           </motion.div>
 
-          {/* Right Column - Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            className="relative"
+          <motion.ul
+            initial="hidden"
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 1 } } }}
+            className="flex flex-wrap gap-x-6 gap-y-3"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <div className="aspect-[4/3] bg-neutral-900">
-                <Image
-                  src="/images/hero-app-mockup.png"
-                  alt="CODA for Square app and website mockup"
-                  width={1600}
-                  height={1200}
-                  className="h-full w-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
+            {trust.map((item) => (
+              <motion.li
+                key={item}
+                variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }}
+                className="flex items-center gap-2 text-sm font-medium text-neutral-300"
+              >
+                <HiCheckCircle className="h-5 w-5 text-coda-sky" />
+                {item}
+              </motion.li>
+            ))}
+          </motion.ul>
+        </div>
 
-            {/* Floating elements */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[460px]"
+        >
+          <div className="absolute inset-[-12%] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,.35),rgba(255,61,111,.18)_45%,transparent_70%)] blur-2xl" />
+          <div className="relative flex items-end justify-center gap-4 pt-6">
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-6 -right-6 bg-neutral-950/90 border border-white/10 rounded-xl shadow-xl p-4 hidden lg:block"
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-[46%] -rotate-[5deg] overflow-hidden rounded-[28px] border-4 border-[#0b0f18] shadow-2xl shadow-black/60"
             >
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-[#FCBF49] rounded-full"></div>
-                <span className="text-sm font-medium text-neutral-200">Live Orders</span>
-              </div>
-              <p className="text-2xl font-bold text-[#FCBF49] mt-2">+25%</p>
+              <Image src="/images/work/nimble-home.jpg" alt="Nimble Chicago ordering app home screen" width={390} height={844} priority className="h-auto w-full" />
             </motion.div>
-
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-neutral-950/90 border border-white/10 rounded-xl shadow-xl p-4 hidden lg:block"
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+              className="mb-10 w-[46%] rotate-[5deg] overflow-hidden rounded-[28px] border-4 border-[#0b0f18] shadow-2xl shadow-black/60"
             >
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-[#F77F00] rounded-full"></div>
-                <span className="text-sm font-medium text-neutral-200">Square Sync</span>
-              </div>
-              <p className="text-2xl font-bold text-[#F77F00] mt-2">Real-time</p>
+              <Image src="/images/work/nimble-menu.jpg" alt="Nimble Chicago ordering app cart screen" width={390} height={844} priority className="h-auto w-full" />
             </motion.div>
+          </div>
+
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            className="glass absolute -left-4 bottom-16 rounded-2xl px-4 py-3 shadow-xl sm:-left-10"
+          >
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-coda-sky">Nimble Chicago</p>
+            <p className="gradient-text text-2xl font-extrabold">+35% orders</p>
+            <p className="text-xs text-neutral-400">after the app launched</p>
           </motion.div>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            className="glass absolute -right-2 top-8 flex items-center gap-2 rounded-full px-4 py-2 shadow-xl sm:-right-8"
+          >
+            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
+            <span className="font-mono text-xs text-neutral-200">Square menu &amp; stock in sync</span>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <div className="marquee relative z-10 mt-20 border-y border-white/10 py-5" aria-hidden="true">
+        <div className="marquee-track">
+          {[...capabilities, ...capabilities].map((item, i) => (
+            <span key={`${item}-${i}`} className="flex items-center gap-12 whitespace-nowrap font-mono text-sm text-neutral-500">
+              {item}
+              <span className="text-coda-red">✦</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>

@@ -33,6 +33,15 @@ module.exports = {
           800: '#b3223f',
           900: '#99192f',
         },
+        coda: {
+          ink: '#06080f',
+          surface: '#0c111b',
+          red: '#ff3d6f',
+          amber: '#ffb020',
+          yellow: '#ffd23f',
+          sky: '#38bdf8',
+          blue: '#2563eb',
+        },
         neutral: {
           50: '#fafafa',
           100: '#f5f5f5',
@@ -48,7 +57,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-serif)', 'serif'],
+        serif: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
     },
   },

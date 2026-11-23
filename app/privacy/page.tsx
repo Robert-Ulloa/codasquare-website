@@ -1,10 +1,17 @@
+import { pageMeta } from '@/lib/seo'
 import Link from 'next/link'
+
+export const metadata = pageMeta(
+  'Privacy Policy',
+  'How CODA for Square collects and uses information.',
+  '/privacy',
+)
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100">
+    <main className="min-h-screen text-neutral-100">
       <div className="container-custom py-32 max-w-3xl">
-        <Link href="/" className="text-[#FCBF49] hover:text-[#F77F00] text-sm mb-8 inline-block transition-colors">
+        <Link href="/" className="text-coda-sky hover:text-white text-sm mb-8 inline-block transition-colors">
           &larr; Back to Home
         </Link>
         <h1 className="text-4xl font-bold text-neutral-50 mb-8">Privacy Policy</h1>
@@ -34,7 +41,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold text-neutral-50">Contact</h2>
           <p>
             Questions about this policy? Email us at{' '}
-            <a href="mailto:Roanuc8@gmail.com" className="text-[#FCBF49] hover:text-[#F77F00] transition-colors">
+            <a href="mailto:Roanuc8@gmail.com" className="text-coda-sky hover:text-white transition-colors">
               Roanuc8@gmail.com
             </a>.
           </p>

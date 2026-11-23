@@ -12,10 +12,10 @@ export default function SolutionSection() {
   ]
 
   return (
-    <section id="solutions" className="section-padding section-snap pt-28 md:pt-32 bg-neutral-950 text-white relative overflow-hidden">
+    <section id="solutions" className="section-padding section-snap pt-28 md:pt-32 text-white relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute -top-20 right-[-8%] h-72 w-72 rounded-full bg-[#D62828]/20 blur-3xl" />
-        <div className="absolute bottom-[-20%] left-[15%] h-96 w-96 rounded-full bg-[#F77F00]/20 blur-3xl" />
+        <div className="absolute -top-20 right-[-8%] h-72 w-72 rounded-full bg-coda-blue/20 blur-3xl" />
+        <div className="absolute bottom-[-20%] left-[15%] h-96 w-96 rounded-full bg-coda-red/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -46,13 +46,13 @@ export default function SolutionSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-start space-x-3"
                 >
-                  <HiCheckCircle className="w-6 h-6 text-[#FCBF49] flex-shrink-0 mt-1" />
+                  <HiCheckCircle className="w-6 h-6 text-coda-sky flex-shrink-0 mt-1" />
                   <span className="text-lg text-neutral-200">{feature}</span>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-2xl font-semibold text-[#FCBF49] italic">
+            <p className="text-2xl font-semibold text-coda-sky italic">
               Your business is unique. Your software should be too.
             </p>
           </motion.div>
@@ -69,7 +69,7 @@ export default function SolutionSection() {
               {/* Square POS in center */}
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-24 h-24 bg-white rounded-2xl shadow-2xl mb-4">
-                  <span className="text-4xl font-bold text-[#003049]">□</span>
+                  <span className="text-4xl font-bold text-coda-blue">□</span>
                 </div>
                 <p className="text-lg font-semibold">Square POS</p>
               </div>

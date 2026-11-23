@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Essential",
     description:
-      "A focused launch kit to get your brand online and taking orders — typically live in 6 weeks.",
+      "A focused launch kit to get your brand online and taking orders, fast.",
     features: [
       "Custom online ordering site",
       "Square menu sync",
@@ -47,12 +47,12 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="section-padding section-snap bg-neutral-950 text-neutral-100 relative overflow-hidden"
+      className="section-padding section-snap text-neutral-100 relative overflow-hidden"
     >
       <div className="absolute inset-0">
-        <div className="absolute -top-32 right-[-10%] h-80 w-80 rounded-full bg-[#F77F00]/20 blur-3xl" />
-        <div className="absolute -bottom-24 left-[-12%] h-96 w-96 rounded-full bg-[#D62828]/20 blur-3xl" />
-        <div className="absolute top-1/3 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FCBF49]/15 blur-3xl" />
+        <div className="absolute -top-32 right-[-10%] h-80 w-80 rounded-full bg-coda-red/20 blur-3xl" />
+        <div className="absolute -bottom-24 left-[-12%] h-96 w-96 rounded-full bg-coda-blue/20 blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-coda-amber/15 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -68,7 +68,7 @@ export default function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-sm uppercase tracking-[0.2em] text-[#FCBF49] mb-4"
+            className="text-sm uppercase tracking-[0.2em] text-coda-sky mb-4"
           >
             Service Tiers
           </motion.p>
@@ -103,16 +103,16 @@ export default function FeaturesSection() {
               whileHover={{ y: -6 }}
               className={`relative rounded-2xl p-8 border backdrop-blur ${
                 tier.popular
-                  ? "bg-white/10 border-[#FCBF49]/50 shadow-[0_20px_60px_rgba(252,191,73,0.15)]"
+                  ? "bg-white/10 border-coda-sky/50 shadow-[0_20px_60px_rgba(56,189,248,0.15)]"
                   : "bg-white/5 border-white/10 hover:border-white/20"
               }`}
             >
               <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-40">
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#EAE2B7] to-transparent" />
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-coda-sky to-transparent" />
               </div>
 
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FCBF49] text-neutral-950 text-sm font-semibold px-4 py-1 rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-coda-yellow text-neutral-950 text-sm font-semibold px-4 py-1 rounded-full">
                   Most Popular
                 </div>
               )}
@@ -127,7 +127,7 @@ export default function FeaturesSection() {
               <ul className="space-y-3 mb-6">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start space-x-3">
-                    <span className="mt-2 w-2 h-2 rounded-full bg-[#F77F00] flex-shrink-0" />
+                    <span className="mt-2 w-2 h-2 rounded-full bg-coda-amber flex-shrink-0" />
                     <span className="text-neutral-200 text-sm">{feature}</span>
                   </li>
                 ))}
@@ -142,7 +142,7 @@ export default function FeaturesSection() {
                 href="/pricing"
                 className={`mt-6 block text-center w-full py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   tier.popular
-                    ? "bg-[#FCBF49] text-neutral-950 hover:bg-[#F77F00] shadow-md hover:shadow-lg"
+                    ? "bg-coda-yellow text-neutral-950 hover:bg-coda-amber shadow-md hover:shadow-lg"
                     : "bg-white/10 text-neutral-200 hover:bg-white/20 border border-white/10"
                 }`}
               >

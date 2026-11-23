@@ -52,9 +52,9 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="section-padding section-snap pt-28 md:pt-32 bg-[#0B1F2A] text-neutral-100 relative overflow-hidden">
+    <section id="how-it-works" className="section-padding section-snap pt-28 md:pt-32 bg-transparent text-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-10 right-[-10%] h-72 w-72 rounded-full bg-[#003049]/40 blur-3xl" />
+        <div className="absolute top-10 right-[-10%] h-72 w-72 rounded-full bg-coda-blue/20 blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg text-neutral-50 mb-4">
-            From Idea to Launch With <span className="text-[#FCBF49]">Clear Milestones</span>
+            From Idea to Launch With <span className="gradient-text">Clear Milestones</span>
           </h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
             A clear, collaborative process with defined milestones — so you always know what&apos;s happening and what&apos;s next.
@@ -91,7 +91,7 @@ export default function HowItWorksSection() {
               >
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <span className="inline-block text-sm font-semibold text-[#FCBF49] mb-2">
+                  <span className="inline-block text-sm font-semibold text-coda-sky mb-2">
                     {step.week}
                   </span>
                   <h3 className="text-2xl font-bold text-neutral-50 mb-3">{step.title}</h3>
@@ -100,17 +100,17 @@ export default function HowItWorksSection() {
                       <li key={i} className={`text-neutral-300 flex items-center gap-2 ${
                         index % 2 === 0 ? 'md:justify-end' : ''
                       }`}>
-                        {index % 2 !== 0 && <span className="w-1.5 h-1.5 bg-[#F77F00] rounded-full flex-shrink-0" />}
+                        {index % 2 !== 0 && <span className="w-1.5 h-1.5 bg-coda-amber rounded-full flex-shrink-0" />}
                         <span>{bullet}</span>
-                        {index % 2 === 0 && <span className="w-1.5 h-1.5 bg-[#F77F00] rounded-full flex-shrink-0" />}
+                        {index % 2 === 0 && <span className="w-1.5 h-1.5 bg-coda-amber rounded-full flex-shrink-0" />}
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Icon circle */}
-                <div className="relative z-10 flex-shrink-0 w-16 h-16 bg-[#003049] rounded-full flex items-center justify-center shadow-lg border border-white/10">
-                  <step.icon className="w-8 h-8 text-[#FCBF49]" />
+                <div className="relative z-10 flex-shrink-0 w-16 h-16 bg-coda-blue/25 rounded-full flex items-center justify-center shadow-lg border border-white/10">
+                  <step.icon className="w-8 h-8 text-coda-sky" />
                 </div>
 
                 {/* Spacer for the other side */}

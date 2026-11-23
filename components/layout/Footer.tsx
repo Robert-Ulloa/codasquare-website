@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { CodaLogo } from '@/components/brand/Logo'
 import { FaLinkedin, FaGlobe, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
       { label: 'About', href: '/about#about' },
       { label: 'Who This Is For', href: '/about' },
       { label: 'Work', href: '/work#work' },
-      { label: 'Pricing', href: '/pricing#pricing' },
+      { label: 'Packages', href: '/pricing#pricing' },
       { label: 'Contact', href: '/contact#contact' },
     ],
     legal: [
@@ -26,29 +26,24 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-neutral-950 text-neutral-300">
+    <footer className="border-t border-white/10 bg-[#06080f]/60 text-neutral-400 backdrop-blur">
       <div className="container-custom py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-1">
-            <div className="text-2xl font-bold text-[#EAE2B7] mb-4 flex items-center gap-3">
-              <Image src="/images/logo.png" alt="CODA for Square logo" width={28} height={28} className="rounded-md" />
-              <span className="flex items-baseline gap-2">
-                CODA
-                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400">for</span>
-                <span className="text-[#F77F00]">Square</span>
-              </span>
+            <div className="mb-4">
+              <CodaLogo />
             </div>
             <p className="text-sm mb-4">
-              Custom apps and websites built for independent and new businesses.
+              Affordable custom ordering apps and websites for independent businesses, connected to Square and owned by you.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com/in/roberto-ulloa/"
+                href="https://www.linkedin.com/in/roberto-antonio-ulloa-cruz-30135b317/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#FCBF49] transition-colors"
+                className="hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -57,18 +52,18 @@ export default function Footer() {
                 href="https://robertoulloa.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#FCBF49] transition-colors"
+                className="hover:text-white transition-colors"
                 aria-label="Portfolio"
               >
                 <FaGlobe className="w-5 h-5" />
               </a>
-              <a
-                href="mailto:Roanuc8@gmail.com"
-                className="hover:text-[#FCBF49] transition-colors"
-                aria-label="Email"
+              <Link
+                href="/contact"
+                className="hover:text-white transition-colors"
+                aria-label="Contact CODA"
               >
                 <FaEnvelope className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -80,7 +75,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#FCBF49] transition-colors"
+                    className="text-sm hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -97,7 +92,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#FCBF49] transition-colors"
+                    className="text-sm hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -114,7 +109,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#FCBF49] transition-colors"
+                    className="text-sm hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
